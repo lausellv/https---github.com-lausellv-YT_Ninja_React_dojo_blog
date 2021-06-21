@@ -8,11 +8,11 @@ const Home = () => {
   const [age, setAge] = useState(28);
 
   const handleClickAgain = (name, e)=>{
-console.log('Hello '+ name, e.target)
+console.log('Hello '+ name, e.bubbles) 
   }
 
   const handleClick = function (e) {
-    console.log('hello ninjas', e.target)
+    console.log('hello ninjas', e)
     setName("Luigi");
     setAge(45);
   };
@@ -25,6 +25,7 @@ console.log('Hello '+ name, e.target)
       </p>
       <button onClick={handleClick}>Click me</button>
       <button onClick={(e)=>handleClickAgain('Victor', e)}>Click me again</button>
+      <button onClick={(e)=>{console.log('hello', e.target)}}>Click me one more time</button>
     </div>
   );
 };
